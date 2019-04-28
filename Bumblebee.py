@@ -1,4 +1,4 @@
-import JarvisEng
+import commands
 import porcupine as Porcupine
 import struct
 import time
@@ -18,7 +18,7 @@ def run():
         result = handle.process(pcm)
         if result:
             print("Hotword detected!")
-            JarvisEng.listening()
+            commands.listening()
             pass
         return None, pyaudio.paContinue
 
