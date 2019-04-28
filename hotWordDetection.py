@@ -6,7 +6,7 @@ import pyaudio
 
 library_path = 'lib\\windows\\amd64\\libpv_porcupine.dll'
 model_file_path = 'lib\\common\\porcupine_params.pv'
-keyword_file_paths = ['assistant_windows.ppn']
+keyword_file_paths = ['bumblebee_windows.ppn']
 sensitivities = [0.5]
 handle = Porcupine.Porcupine(library_path, model_file_path, keyword_file_paths=keyword_file_paths, sensitivities=sensitivities)
 input_device_index=None
