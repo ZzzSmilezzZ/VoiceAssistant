@@ -14,7 +14,6 @@ import winsound
 #     with microphone as source:
 #         recognizer.adjust_for_ambient_noise(source)
 #     print("Complete")
-print('Starting listening...')
 microphone = sr.Microphone()
 recognizer = sr.Recognizer()
 recognizer.pause_threshold = 0.3
@@ -47,6 +46,7 @@ def execute(statement):
 def listening():
     with microphone as source:
         recognizer.adjust_for_ambient_noise(source)
+        print("Starting listening...")
         winsound.MessageBeep(-1)
         try:
             audio = recognizer.listen(source)

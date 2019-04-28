@@ -17,8 +17,8 @@ def run():
         pcm = struct.unpack_from("h" * handle.frame_length, in_data)
         result = handle.process(pcm)
         if result:
-            print("hotWord detected")
-            print(result)
+            print("Hotword detected!")
+            JarvisEng.listening()
             pass
         return None, pyaudio.paContinue
 
