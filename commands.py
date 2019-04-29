@@ -34,11 +34,19 @@ def execute(statement):
                 os.system('taskmgr')
             elif "overwatch" in statement:
                 os.startfile(r"C:\Program Files (x86)\Overwatch\Overwatch Launcher.exe")
-            elif "browser" in statement:
+            elif ("google chrome" in statement) or ("Google chrome" in statement) or ("Google Chrome" in statement):
                 os.startfile(r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
+            elif ("firefox" in statement) or ("mozilla" in statement) or ("mozilla firefox" in statement) or ("firefox mozilla" in statement):
+                os.startfile(r"C:\Program Files\Mozilla Firefox\firefox.exe")
         elif "close" in statement:
             if "browser" in statement:
                 os.system("TASKKILL /IM chrome.exe")
+        elif "find" in statement:
+            if "in google" in statement:
+                webbrowser.open_new_tab("https://www.google.com/search?q=" + statement[statement.find("find") + 5:statement.find("in google") - 1:1])
+            elif ("in youtube" in statement) or ("on youtube" in statement):
+                webbrowser.open_new_tab("https://www.youtube.com/results?search_query=" + statement[statement.find("find") + 5:statement.find("youtube") - 4:1])
+
 
         if ("shutdown" in statement) or ("shut down" in statement):
             sys.exit("closed")
